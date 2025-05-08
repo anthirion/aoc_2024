@@ -1,24 +1,24 @@
 from collections import defaultdict
 
-def computeSimilarityScore(leftList: list[int], rightlist: list[int]) -> int:
-    occurences = computeleftListOccurences(rightlist)
-    similarityScore = 0
-    for leftListInteger in leftList:
-        similarityScore += leftListInteger * occurences.get(leftListInteger, 0)
-    return similarityScore
+def computeSimilarityScore(leftList: list[int], rightList: list[int]) -> int:
+  occurrences = computeLeftListOccurrences(rightList)
+  similarityScore = 0
+  for leftListInteger in leftList:
+      similarityScore += leftListInteger * occurrences.get(leftListInteger, 0)
+  return similarityScore
 
 # Naive implementation with O(n2) time complexity
-# def computeleftListOccurences(leftList: list[int], rightlist: list[int]) -> list[int]:
-#     occurences = []
-#     for integer in leftList:
-#         occurences.append(rightlist.count(integer))
-#     return occurences
+# def computeLeftListOccurrences(leftList: list[int], rightList: list[int]) -> list[int]:
+#   occurrences = []
+#   for integer in leftList:
+#       occurrences.append(rightList.count(integer))
+#   return occurrences
 
 # Better implementation with O(n) time complexity
-def computeleftListOccurences(rightlist: list[int]) -> dict[int, int]:
-    """Returns a dictionnary where rightlist elements are keys and occurences are values"""
-    # using a default dict removes the need to check if the key exists
-    occurences: dict[int, int] = defaultdict(lambda: 0)
-    for integer in rightlist:
-        occurences[integer] += 1
-    return occurences
+def computeLeftListOccurrences(rightList: list[int]) -> dict[int, int]:
+  """Returns a dictionary where rightList elements are keys and occurrences are values"""
+  # using a default dict removes the need to check if the key exists
+  occurrences: dict[int, int] = defaultdict(lambda: 0)
+  for integer in rightList:
+      occurrences[integer] += 1
+  return occurrences

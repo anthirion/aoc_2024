@@ -1,5 +1,5 @@
 from part1 import (
-    fillListswithPuzzleInput,
+    fillListsWithPuzzleInput,
     sortLists,
     computeTotalDistance,
 )
@@ -10,7 +10,7 @@ from part2 import (
 import argparse
 
 def main():
-    leftList, rightList = fillListswithPuzzleInput("./day1/puzzle.txt")
+    leftList, rightList = fillListsWithPuzzleInput("./day1/puzzle.txt")
     parser = argparse.ArgumentParser()
     parser.add_argument("--part", type=int, choices=[1, 2], default=1)
     args = parser.parse_args()
