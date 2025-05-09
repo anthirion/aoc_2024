@@ -1,6 +1,6 @@
 import argparse
 
-from part1 import Data
+from data import Data
 
 def getArgumentsFromCommandLine():
   parser = argparse.ArgumentParser()
@@ -16,7 +16,7 @@ def main():
   if args.part == 1:
     print(f"Number of safe reports: {data.countSafeReports()}")
   elif args.part == 2:
-    print("TO DO")
+    print(f"Number of safe reports using Dampener problem: {data.countSafeReportsAfterCorrection()}")
 
 if __name__ == "__main__":
     main()
