@@ -5,8 +5,7 @@ class FaultTolerantReport(Report):
 
   def __init__(self, report: Report):
     # a shallow copy is sufficient since levels is a list of immutables (int)
-    self._levels = report._levels.copy()
-    super().__init__(self._levels)
+    super().__init__(report._levels.copy())
     if len(self._levels) < 2:
       raise ValueError("FaultTolerantReport should have at least 2 levels")
     self._faultyLevelIndex = 0
